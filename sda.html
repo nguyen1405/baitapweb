@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .post {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .comments {
+            margin-top: 15px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+        .comment {
+            margin-bottom: 10px;
+        }
+        blockquote {
+            margin: 5px 0;
+            padding: 5px;
+            border-left: 5px solid #ccc;
+            background: #f9f9f9;
+        }
+        form {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chào mừng đến với blog của tôi!</h1>
+
+    <div class="post">
+        <h2>Bài viết 1</h2>
+        <small>Ngày: 23/09/2024 | Tác giả: Nguyễn Văn A</small>
+        <p>Nội dung bài viết 1. Đây là một bài viết rất thú vị về...</p>
+
+        <div class="comments">
+            <h3>Bình luận:</h3>
+            <div id="comments-list-1" class="comments-list"></div>
+            <form id="comment-form-1" onsubmit="return addComment(event, 1)">
+                <h4>Thêm bình luận:</h4>
+                <input type="text" placeholder="Tên bạn" required>
+                <textarea placeholder="Nội dung bình luận" required></textarea>
+                <button type="submit">Gửi bình luận</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="post">
+        <h2>Bài viết 2</h2>
+        <small>Ngày: 22/09/2024 | Tác giả: Trần Thị B</small>
+        <p>Nội dung bài viết 2. Đây là một bài viết khác về...</p>
+
+        <div class="comments">
+            <h3>Bình luận:</h3>
+            <div id="comments-list-2" class="comments-list"></div>
+            <form id="comment-form-2" onsubmit="return addComment(event, 2)">
+                <h4>Thêm bình luận:</h4>
+                <input type="text" placeholder="Tên bạn" required>
+                <textarea placeholder="Nội dung bình luận" required></textarea>
+                <button type="submit">Gửi bình luận</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function addComment(event, postId) {
+            event.preventDefault(); // Ngăn không cho form tải lại trang
+
+            const form = event.target;
+            const name = form.querySelector('input').value;
+            const comment = form.querySelector('textarea').value;
+
+            // Tạo phần bình luận mới
+            const commentDiv = document.createElement('div');
+            commentDiv.classList.add('comment');
+            commentDiv.innerHTML = `<strong>${name}:</strong><blockquote>${comment}</blockquote>`;
+
+            // Thêm bình luận vào danh sách bình luận
+            document.getElementById(`comments-list-${postId}`).appendChild(commentDiv);
+
+            // Xóa nội dung của form
+            form.reset();
+        }
+    </script>
+</body>
+</html>
