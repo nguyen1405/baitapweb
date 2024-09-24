@@ -15,6 +15,11 @@
             padding: 15px;
             margin-bottom: 20px;
         }
+        .post img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
         .comments {
             margin-top: 15px;
             border-top: 1px solid #ccc;
@@ -32,15 +37,50 @@
         form {
             margin-top: 15px;
         }
+        .tags {
+            margin-top: 10px;
+        }
+        .tags a {
+            background-color: #f0f0f0;
+            padding: 5px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+        .author-bio {
+            margin-top: 20px;
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 5px solid #ccc;
+        }
     </style>
 </head>
 <body>
     <h1>Chào mừng đến với blog của tôi!</h1>
 
+    <!-- First Post -->
     <div class="post">
         <h2>Bài viết 1</h2>
         <small>Ngày: 23/09/2024 | Tác giả: Nguyễn Văn A</small>
+
+        <!-- Image for Post 1 -->
+        <img src="https://example.com/image1.jpg" alt="Ảnh bài viết 1">
+
         <p>Nội dung bài viết 1. Đây là một bài viết rất thú vị về...</p>
+
+        <!-- New Author Bio -->
+        <div class="author-bio">
+            <h4>Về tác giả:</h4>
+            <p>Nguyễn Văn A là một nhà phát triển phần mềm chuyên nghiệp với hơn 10 năm kinh nghiệm trong lĩnh vực lập trình.</p>
+        </div>
+
+        <!-- Post Tags -->
+        <div class="tags">
+            <strong>Thẻ:</strong> 
+            <a href="#">Công nghệ</a>
+            <a href="#">Phát triển web</a>
+        </div>
 
         <div class="comments">
             <h3>Bình luận:</h3>
@@ -54,10 +94,28 @@
         </div>
     </div>
 
+    <!-- Second Post -->
     <div class="post">
         <h2>Bài viết 2</h2>
         <small>Ngày: 22/09/2024 | Tác giả: Trần Thị B</small>
+
+        <!-- Image for Post 2 -->
+        <img src="https://example.com/image2.jpg" alt="Ảnh bài viết 2">
+
         <p>Nội dung bài viết 2. Đây là một bài viết khác về...</p>
+
+        <!-- New Author Bio -->
+        <div class="author-bio">
+            <h4>Về tác giả:</h4>
+            <p>Trần Thị B là một nhà văn tự do, đam mê viết lách và khám phá những điều mới mẻ trong cuộc sống.</p>
+        </div>
+
+        <!-- Post Tags -->
+        <div class="tags">
+            <strong>Thẻ:</strong> 
+            <a href="#">Lối sống</a>
+            <a href="#">Viết lách</a>
+        </div>
 
         <div class="comments">
             <h3>Bình luận:</h3>
